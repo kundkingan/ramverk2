@@ -1,0 +1,25 @@
+.container {
+  padding-top: 25px;
+}
+
+.front-img {
+	width: 256px;
+	margin: 0 auto;
+}
+
+.about-img {
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+
+@media (max-width: 700px) {
+	.about-img {
+		width: 100%;
+	}
+
+	.about-img img {
+		width: 100%;
+	}
+}
