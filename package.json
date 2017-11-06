@@ -7,7 +7,8 @@
     "test": "nyc --reporter=html --reporter=text mocha \"test/**/*.js\"",
     "docker-latest": "docker-compose run node_latest npm test",
     "docker-8": "docker-compose run node_8 npm test",
-    "docker-7": "docker-compose run node_7 npm test"
+    "docker-7": "docker-compose run node_7 npm test",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov --token=7e0240e9-f4b9-40c1-ae31-5239d9f9d784"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "clean-css-cli": "^4.1.10",
+    "codecov": "^3.0.0",
     "csslint": "^1.0.5",
     "eslint": "^4.9.0",
     "eslint-plugin-react": "^7.4.0",
@@ -30,9 +32,9 @@
     "jscs": "^3.0.7",
     "jsonlint": "^1.6.2",
     "mocha": "^4.0.1",
+    "nyc": "^11.2.1",
     "stylelint": "^8.2.0",
     "supertest": "^3.0.0",
-    "uglify-js": "^3.1.4",
-    "nyc": "^11.2.1"
+    "uglify-js": "^3.1.4"
   }
 }
