@@ -11,8 +11,11 @@ router.get('/reports', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'Home' });
+  res.render('about', { title: 'About' });
 });
 
+router.get('/booking-system', function(req, res, next) {
+  res.render('booking-system', { title: 'Demo Booking System' });
+});
 
 module.exports = router;

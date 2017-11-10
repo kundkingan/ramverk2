@@ -30,6 +30,11 @@ describe('loading express', function () {
     .get('/reports')
     .expect(200, done);
   });
+  it('responds to /booking-system', function testReports(done) {
+  request(server)
+    .get('/booking-system')
+    .expect(200, done);
+  });
   it('404 everything else', function testPath(done) {
     request(server)
       .get('/foo/bar')
