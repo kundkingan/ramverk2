@@ -1,6 +1,6 @@
 (function() {
 	let websocket,
-      url         = 'ws://localhost:3017/',
+      url         = 'ws://localhost:3000/',
       userNick    = '',
       nick        = document.getElementById('nick'),
       connect     = document.getElementById('connect'),
