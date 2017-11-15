@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	div(class='chat')
+		div(class='row')
+				div(class='file-field input-field')
+					div(class='btn save-effect waves-light', id='connect')
+						span() connnect
+					div(class='file-path-wrapper')
+						input(id='nick' type='text' placeholder='Nick name')
+		p
+			label Log:
+			div(class='output', id='output')
+
+		div(class='row')
+				div(class='file-field input-field')
+					div(class='btn save-effect waves-light', id='send')
+						i(class='material-icons') send
+					div(class='file-path-wrapper')
+						input(id='message' type='text' placeholder='Message')
+			
+				
+
+
+block extra-scripts
+	script(src='js/client.js')

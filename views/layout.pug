@@ -1,11 +1,11 @@
 doctype html
 html
   head
-    title= title
-    include incl/links.pug
+    title=title
+    include incl/links
 
   body
-    include incl/navbar.pug
+    include incl/navbar
 
     div(class='container')
         div(class='row')
@@ -16,4 +16,5 @@ html
         script(src='https://code.jquery.com/jquery-3.2.1.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
         script(src='js/navbar.js')
-        
+    
+    block extra-scripts

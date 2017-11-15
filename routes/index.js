@@ -14,6 +14,10 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
 
+router.get('/chat', function(req, res, next) {
+  res.render('chat', { title: 'Chat' });
+});
+
 router.get('/booking-system', function(req, res, next) {
   res.render('booking-system', { title: 'Demo Booking System' });
 });
