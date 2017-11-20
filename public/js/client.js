@@ -1,6 +1,7 @@
 (function() {
 	let websocket,
-      url         = 'ws://localhost:3017/',
+      // url         = 'ws://localhost:3000/',
+      url         = 'ws://nodejs1.student.bth.se:8035/',
       userNick    = '',
       nick        = document.getElementById('nick'),
       connect     = document.getElementById('connect'),
@@ -20,9 +21,7 @@
   	websocket = new WebSocket(url, 'json'), userNick = nick.value;
 
   	websocket.onopen = () => {
-      let data = {nick: 'Server', message: 'The websocket is now open'}
-  		outputLog(data);
-      websocket.send(data);
+  		outputLog({nick: 'Server', message: 'Your are connected'});
   	};
 
   	websocket.onmessage = (event) => {
@@ -44,5 +43,4 @@
       outputLog({nick: userNick, message: messageText});
     }
   });
-
 })();
