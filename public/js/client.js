@@ -43,9 +43,4 @@
       outputLog({nick: userNick, message: messageText});
     }
   });
-<<<<<<< HEAD
-})();
-=======
 
-})();
->>>>>>> 8e41b681b071a32ba277218ea832eb389aeff00d
