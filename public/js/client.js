@@ -1,4 +1,4 @@
-(function() {
+(() => {
 	let websocket,
       // url         = 'ws://localhost:3000/',
       url         = 'ws://nodejs1.student.bth.se:8035/',
@@ -8,6 +8,7 @@
       output      = document.getElementById('output'),
       send        = document.getElementById('send'),
       message     = document.getElementById('message');
+
 
   function outputLog(data) {
   	let now = new Date();
@@ -43,4 +44,5 @@
       outputLog({nick: userNick, message: messageText});
     }
   });
+})();
 

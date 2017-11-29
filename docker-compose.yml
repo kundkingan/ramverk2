@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   node_latest:
     image: "node:9.0.0"
@@ -6,7 +6,7 @@ services:
     volumes:
       - ./:/app/
     ports:
-      - "3000:3000"
+      - "3001:3000"
     command: "npm test"
 
   node_8:
@@ -15,7 +15,7 @@ services:
     volumes:
       - ./:/app/
     ports:
-      - "3001:3000"
+      - "3002:3000"
     command: "npm test"
 
   node_6:
@@ -24,5 +24,29 @@ services:
     volumes:
       - ./:/app/
     ports:
-      - "3002:3000"
+      - "3003:3000"
     command: "npm test"
+
+  express:
+    image: "node:alpine"
+    working_dir: /app
+    environment:
+        - DBWEBB_DSN=mongodb://mongodb:27017/mumin
+    volumes:
+        - ./:/app/
+    ports:
+        - 3000:3000
+    links:
+        - mongodb
+    command: "npm start"
+
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    environment:
+        - MONGO_DATA_DIR=/data/db
+    volumes:
+        - ./data/db:/data/db
+    ports:
+        - 27017:27017
+    command: mongod

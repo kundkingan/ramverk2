@@ -1,2 +1,21 @@
 h2 kmom05
-p To be continued
+
+h5 Hur gick det att komma igång med databasen MongoDB?
+
+p Det gick ju bra. Jag valde att inte ladda ner mongodb till min dator utan kör det istället i en kontainer hela tiden. Allt funkade bra tills jag skulle ge mig på att starta server filerna i övningen. Då jag kör docker toolbox, som har en linux vm med egen IP. Då funkar inte localhost, vilket jag ville att det skulle göra men det gjorde det inte. Så efter lite om och med så fick jag reda på att man ska connecta med IP:en som står i Kitematic programmet för docker. Men nu vet man det. Men sen gick det framåt snabbt utan konstigheter.
+
+h5 Vilken syn har du på databaser inom konceptet NoSQL?
+
+p Det är smidigt på ett sätt. Har suttit lite med Cassandra också som är NoSQL och tycker det är bra sätt att spara data på.
+
+h5 Reflektera över skillnader och likheter mellan relationsdatabaser och databaser inom NoSQL.
+
+p NoSQL tycker jag är roligare att använda då man kör med objekt stilen istället för queries. NoSQL skulle jag tycka är bättre ifall man bara vill lagra data utan någon speciell koppling till varandra. Men ifall man ska ha typ en E-handel där man har konton med beställningnar, favoriter osv så är ju relationsdatabaser bättre då man kan använda sig av relationer. Vilket gör det lättare för utvecklare att hitta grejer samt slipper sortera själva och kan använda sig av queries istället.
+
+h5 Vilka är dina tankar om asynkron programmering med JavaScript?
+
+p Riktigt bra funktionalitet. Tar lite tid att förstå i början men efter det så går det undan. Har inte lärt mig async helt o hållet utan använder promises istället. 
+
+h5 Hur känner du för Docker och det sättet vi jobbar med tjänster i kontainrar?
+
+p Asså docker är bra ifall man sitter med linux skulle jag säga. Ifall man sitter på Windows som jag gör så är det ett rent helvete ibland. Det är så mycket random saker som går fel. Typ allt funkar en kväll sen på morgonen sätter man igång igen och gör docker-compose up -d. Då får man error att package.json inte finns helt plötsligt. Samt så använde jag innan docker for windows. Men det gick inte att starta en morgon för hyper-v var tydligen av, men det var på. Så jag byte till docker toolbox som verkar fungera för tillfället. Men själva tanken bakom docker tycker jag är positiv, men verktyget för windows är inte min favorit.

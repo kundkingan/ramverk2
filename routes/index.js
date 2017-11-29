@@ -1,24 +1,24 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('home', { title: 'Home' });
 });
 
-router.get('/reports', function(req, res, next) {
+router.get('/reports', (req, res, next) => {
   res.render('reports', { title: 'Reports' });
 });
 
-router.get('/about', function(req, res, next) {
+router.get('/about', (req, res, next) => {
   res.render('about', { title: 'About' });
 });
 
-router.get('/chat', function(req, res, next) {
+router.get('/chat', (req, res, next) => {
   res.render('chat', { title: 'Chat' });
 });
 
-router.get('/booking-system', function(req, res, next) {
+router.get('/booking-system', (req, res, next) => {
   res.render('booking-system', { title: 'Demo Booking System' });
 });
 

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	h1 Mongodb
+
+	div(class='db')
+		div(class='row')
+				div(class='file-field input-field')
+					div(class='btn save-effect waves-light', id='add', onclick='add()') add
+					div(class='file-path-wrapper')
+						input(id='name' type='text' placeholder='Name of soemthing')
+							
+				div(class='file-field input-field')
+					div(class='btn save-effect waves-light', id='edit', onclick='edit()') edit
+					div(class='file-path-wrapper')
+						input(disabled, id='nameEdit' type='text' placeholder='Name of soemthing')
+
+	if (mongodb)
+		table
+			thead
+				tr
+					th Name
+					th Delete
+					th Edit
+			tbody
+				each value, index in mongodb
+					tr
+						td
+							h5= value.name
+						td
+							div(class='btn save-effect waves-light ' + value._id, id='delete', onclick='remove(event.path)') delete
+						td
+							div(class='btn save-effect waves-light ' + value._id, id='edit', onclick='addToEdit(event.path)') edit
+	
+			
+block extra-scripts
+	script(src='js/mongodb.js')

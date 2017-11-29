@@ -8,3 +8,7 @@
 [![codecov](https://codecov.io/gh/kundkingan/ramverk2/branch/master/graph/badge.svg)](https://codecov.io/gh/kundkingan/ramverk2)
 [![Code Coverage](https://scrutinizer-ci.com/g/kundkingan/ramverk2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kundkingan/ramverk2/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kundkingan/ramverk2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kundkingan/ramverk2/?branch=master)
+
+## Mongodb
+
+Change DSN in mongodb/mongodb.js or DBWEBB_DSN as env when starting server on local machine.

@@ -4,10 +4,10 @@
 
 'use strict'
 
-var request = require('supertest');
+let request = require('supertest');
 
 describe('loading express', function () {
-  var server;
+  let server;
   beforeEach(function () {
   	delete require.cache[require.resolve('../../bin/www')];
     server = require('../../bin/www');
@@ -34,11 +34,6 @@ describe('loading express', function () {
   request(server)
     .get('/booking-system')
     .expect(200, done);
-  });
-  it('404 everything else', function testPath(done) {
-    request(server)
-      .get('/foo/bar')
-      .expect(404, done);
   });
 });
 
