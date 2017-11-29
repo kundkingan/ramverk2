@@ -6,20 +6,19 @@ block content
 	div(class='db')
 		div(class='row')
 				div(class='file-field input-field')
-					div(class='btn save-effect waves-light', id='add', onclick='add()') add
 					div(class='file-path-wrapper')
-						input(id='name' type='text' placeholder='Name of soemthing')
-							
-				div(class='file-field input-field')
-					div(class='btn save-effect waves-light', id='edit', onclick='edit()') edit
-					div(class='file-path-wrapper')
-						input(disabled, id='nameEdit' type='text' placeholder='Name of soemthing')
+						input(id='name' type='text' placeholder='Name')
+						input(id='address' type='text' placeholder='Addres')
+						input(id='city' type='text' placeholder='City')
+				div(class='btn save-effect waves-light', id='add', onclick='save()') save
 
 	if (mongodb)
 		table
 			thead
 				tr
 					th Name
+					th Address
+					th City
 					th Delete
 					th Edit
 			tbody
@@ -28,9 +27,13 @@ block content
 						td
 							h5= value.name
 						td
+							h5= value.address
+						td
+							h5= value.city
+						td
 							div(class='btn save-effect waves-light ' + value._id, id='delete', onclick='remove(event.path)') delete
 						td
-							div(class='btn save-effect waves-light ' + value._id, id='edit', onclick='addToEdit(event.path)') edit
+							div(class='btn save-effect waves-light ' + value._id, id='edit', onclick='fillInputs(event.path)') edit
 	
 			
 block extra-scripts

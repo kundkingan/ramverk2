@@ -17,18 +17,15 @@ router.get('/', (req, res, next) => {
 		});
 });
 
-router.get('/insert/:name', (req, res, next) => {
-  mongodb.insert({name: req.params.name})
-  	.then((db) => {
-  		res.redirect('/mongodb');
-		})
-		.catch((err) => {
-			console.log(err)
-		});
-});
+router.get('/save/:name-:address-:city-:id', (req, res, next) => {
+	let id = req.params.id !== 'null' ? {_id: ObjectId(req.params.id)} : {name: ''};
+	let saveObj = {
+		name: req.params.name,
+		address: req.params.address,
+		city: req.params.city
+	};
 
-router.get('/edit/:id-:name', (req, res, next) => {
-  mongodb.edit({_id: ObjectId(req.params.id)}, {name: req.params.name})
+  mongodb.save(id, saveObj)
   	.then((db) => {
   		res.redirect('/mongodb');
 		})

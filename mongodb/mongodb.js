@@ -19,27 +19,15 @@ let mongodb = {
     await db.close();
 
 		return res;
-
 	},
 
-	async insert(query) {
+	async save(idQuery, updateQuery) {
     const db  = await mongo.connect(dsn);
     const col = await db.collection(colName);
-		const res = col.insertOne(query)
+		const res = col.updateOne(idQuery, {$set: updateQuery}, {upsert: true})
     await db.close();
 
 		return res;
-
-	},
-
-	async edit(idQuery, updateQuery) {
-    const db  = await mongo.connect(dsn);
-    const col = await db.collection(colName);
-		const res = col.updateOne(idQuery, {$set: updateQuery})
-    await db.close();
-
-		return res;
-
 	}
 };
 

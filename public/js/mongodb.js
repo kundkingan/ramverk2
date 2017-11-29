@@ -1,26 +1,31 @@
-let editId;
+let editId = null;
+
+function save() {
+	let inputs = getInputs();
+	let path = inputs.name  + '-' + inputs.address + '-' + inputs.city + '-' + editId;
+	if (inputs.name.length > 0 && inputs.address.length > 0 && inputs.city.length > 0) {
+		window.location = window.location.href + '/save/' + path
+		editId = null;
+		document.getElementById('edit').addAttribute('disabled');
+	}
+}
 
 function remove(list) {
   window.location = window.location.href + '/delete/' + list['0'].classList[3];
 }
 
-function add() {
-	let name = document.getElementById('name').value;
-	if (name.length > 0) window.location = window.location.href + '/insert/' + name;
+function fillInputs(event) {
+	editId = event['0'].classList[3];
+	document.getElementById('name').value = event['2']['children']['0']['children']['0'].innerText;
+	document.getElementById('address').value = event['2']['children']['1']['children']['0'].innerText;
+	document.getElementById('city').value = event['2']['children']['2']['children']['0'].innerText;
 }
 
-function edit() {
-	let newName = document.getElementById('nameEdit').value;
-	if (newName.length > 0) {
-		window.location = window.location.href + '/edit/' + editId + '-' + newName;
-		newName.addAttribute('disabled');
+function getInputs() {
+	return {
+		name: document.getElementById('name').value,
+		address: document.getElementById('address').value,
+		city: document.getElementById('city').value,
 	}
-}
-
-function addToEdit(list) {
-	let editInput = document.getElementById('nameEdit');
-	editId = list['0'].classList[3];
-	editInput.value = list['2']['children']['0']['children']['0'].innerText;
-	editInput.removeAttribute('disabled');
 }
 
