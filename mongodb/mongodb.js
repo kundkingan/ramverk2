@@ -31,5 +31,4 @@ let mongodb = {
 	}
 };
 
-
 module.exports = mongodb;
