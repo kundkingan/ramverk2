@@ -8,7 +8,8 @@
 
 ## Local development
 
-$ npm install
+$ npm install 
+
 $ npm start
 
 ## Testing
