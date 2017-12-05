@@ -10,25 +10,25 @@ let mongodb = {
     await db.close();
 
     return res;
-	},
+  },
 
-	async remove(query) {
+  async remove(query) {
     const db  = await mongo.connect(dsn);
     const col = await db.collection(colName);
-		const res = col.deleteOne(query)
+    const res = col.deleteOne(query)
     await db.close();
 
-		return res;
-	},
+    return res;
+  },
 
-	async save(idQuery, updateQuery) {
+  async save(idQuery, updateQuery) {
     const db  = await mongo.connect(dsn);
     const col = await db.collection(colName);
-		const res = col.updateOne(idQuery, {$set: updateQuery}, {upsert: true})
+    const res = col.updateOne(idQuery, {$set: updateQuery}, {upsert: true})
     await db.close();
 
-		return res;
-	}
+    return res;
+  }
 };
 
 module.exports = mongodb;

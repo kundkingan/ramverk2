@@ -2,7 +2,7 @@
 * Test
 */
 
-'use strict'
+'use strict';
 
 let request = require('supertest');
 

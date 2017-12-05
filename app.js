@@ -1,14 +1,10 @@
 let express = require('express');
 let path = require('path');
-let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
-require('dotenv').load();
-
 let index = require('./routes/index');
 let mongodb = require('./routes/mongodb');
-
 let app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -23,14 +19,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/mongodb', mongodb);
 
-app.use((req, res, next) => {
+app.use((req, res) => {
   let err = new Error('Not Found');
+
   err.status = 404;
   res.render('404', { url: req.url });
-  // next(err);
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
