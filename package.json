@@ -9,7 +9,7 @@
     "docker-8": "docker-compose run node_8 npm test",
     "docker-7": "docker-compose run node_7 npm test",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov --token=7e0240e9-f4b9-40c1-ae31-5239d9f9d784",
-    "test-scrutinizer": "nyc --all --reporter=clover mocha \"test/**/*.js\""
+    "travis": "nyc --reporter=html --reporter=text mocha \"test/**/*.js\" "
   },
   "dependencies": {
     "body-parser": "~1.18.2",
