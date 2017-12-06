@@ -6,16 +6,46 @@
 [![codecov](https://codecov.io/gh/kundkingan/ramverk2/branch/master/graph/badge.svg)](https://codecov.io/gh/kundkingan/ramverk2)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b9a5a198a01f2c474cb3/maintainability)](https://codeclimate.com/github/kundkingan/ramverk2/maintainability)
 
+## Installation
+To install all of the dependencies then simply execute:
+
+```bash
+npm install
+```
+
 ## Local development
+To run a local development then execute following and go to localhost:3000
 
-$ npm install 
-
-$ npm start
-
-## Testing
-
-$ To run test type: docker-compose up -d 
+```bash
+npm start
+```
 
 ## Mongodb
 
-Change DSN in mongodb/mongodb.js or DBWEBB_DSN as env when starting server on local machine.
+DSN for mongo is mongodb://192.168.99.100:27017/mumin, to change DSN use DBWEBB_DSN as env when starting server on local machine:
+
+## Testing
+
+```bash
+npm test
+```
+
+## Docker testing
+
+```bash
+# Build images
+npm run docker-build
+
+# Node v6
+npm run docker-6
+
+# Node v8
+npm run docker-8
+
+# Node latest
+npm run docker_latest
+```
+
+
+
+

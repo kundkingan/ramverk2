@@ -5,11 +5,11 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "nyc --reporter=html --reporter=text mocha \"test/**/*.js\"  && eslint . ",
+    "travis": "nyc --reporter=html --reporter=text mocha \"test/**/*.js\" ",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov --token=7e0240e9-f4b9-40c1-ae31-5239d9f9d784",
     "docker-latest": "docker-compose run node_latest npm test",
     "docker-8": "docker-compose run node_8 npm test",
-    "docker-7": "docker-compose run node_7 npm test",
-    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov --token=7e0240e9-f4b9-40c1-ae31-5239d9f9d784",
-    "travis": "nyc --reporter=html --reporter=text mocha \"test/**/*.js\" "
+    "docker-7": "docker-compose run node_7 npm test"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
