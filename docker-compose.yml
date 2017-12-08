@@ -1,12 +1,11 @@
 version: "3"
 services:
   express:
-    image: "node:alpine"
-    working_dir: /app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-express
     environment:
         - DBWEBB_DSN=mongodb://mongodb:27017/mumin
-    volumes:
-        - ./:/app/
     ports:
         - 3000:3000
     links:

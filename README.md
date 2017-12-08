@@ -6,12 +6,24 @@
 [![codecov](https://codecov.io/gh/kundkingan/ramverk2/branch/master/graph/badge.svg)](https://codecov.io/gh/kundkingan/ramverk2)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b9a5a198a01f2c474cb3/maintainability)](https://codeclimate.com/github/kundkingan/ramverk2/maintainability)
 
+## Technologies used
+
+* Express
+* Pug
+* Websocket
+* Mongodb
+
 ## Installation
 To install all of the dependencies then simply execute:
 
 ```bash
 npm install
 ```
+
+##Environment
+
+Change port with: DBWEBB_PORT
+Change DSN with: DBWEBB_DSN
 
 ## Local development
 To run a local development then execute following and go to localhost:3000
@@ -20,9 +32,15 @@ To run a local development then execute following and go to localhost:3000
 npm start
 ```
 
+To run a docker container then execute 
+
+```bash
+npm run docker
+```
+
 ## Mongodb
 
-DSN for mongo is mongodb://192.168.99.100:27017/mumin, to change DSN use DBWEBB_DSN as env when starting server on local machine:
+DSN for mongo is mongodb://192.168.99.100:27017/mumin
 
 ## Testing
 
