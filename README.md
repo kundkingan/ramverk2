@@ -54,11 +54,11 @@ npm test
 # Build images
 npm run docker-build
 
-# Node v6
-npm run docker-6
-
 # Node v8
 npm run docker-8
+
+# Node v9
+npm run docker-9
 
 # Node latest
 npm run docker_latest

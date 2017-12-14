@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:9
 
 WORKDIR /usr/src/app
 
@@ -7,4 +7,4 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3002

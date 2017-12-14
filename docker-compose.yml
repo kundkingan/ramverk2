@@ -33,6 +33,16 @@ services:
       - "3001:3000"
     command: "npm test"
 
+  node_9:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-node-9
+    volumes:
+      - ./:/app/
+    ports:
+      - "3002:3000"
+    command: "npm test"
+
   node_8:
     build:
       context: .
@@ -40,17 +50,8 @@ services:
     volumes:
       - ./:/app/
     ports:
-      - "3002:3000"
-    command: "npm test"
-
-  node_6:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile-node-6
-    volumes:
-      - ./:/app/
-    ports:
       - "3003:3000"
     command: "npm test"
+
 
   
