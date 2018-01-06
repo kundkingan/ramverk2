@@ -1,37 +1,38 @@
 (() => {
-	let websocket,
-      // url         = 'ws://localhost:3000/',
-      url         = 'ws://nodejs1.student.bth.se:8035/',
-      userNick    = '',
-      nick        = document.getElementById('nick'),
-      connect     = document.getElementById('connect'),
-      output      = document.getElementById('output'),
-      send        = document.getElementById('send'),
-      message     = document.getElementById('message');
+  let websocket,
+    // url         = 'ws://localhost:3000/',
+    url         = 'ws://nodejs1.student.bth.se:8035/',
+    userNick    = '',
+    nick        = document.getElementById('nick'),
+    connect     = document.getElementById('connect'),
+    output      = document.getElementById('output'),
+    send        = document.getElementById('send'),
+    message     = document.getElementById('message');
 
 
   function outputLog(data) {
-  	let now = new Date();
-  	let timestamp = now.toLocaleTimeString();
+    let now = new Date();
+    let timestamp = now.toLocaleTimeString();
 
-  	output.innerHTML += `${timestamp} ${data.nick}: ${data.message}<br>`;
-  	output.scrollTop = output.scrollHeight;
+    output.innerHTML += `${timestamp} ${data.nick}: ${data.message}<br>`;
+    output.scrollTop = output.scrollHeight;
   }
 
+
   connect.addEventListener('click', () => {
-  	websocket = new WebSocket(url, 'json'), userNick = nick.value;
+    websocket = new WebSocket(url, 'json'), userNick = nick.value;
 
-  	websocket.onopen = () => {
-  		outputLog({nick: 'Server', message: 'Your are connected'});
-  	};
+    websocket.onopen = () => {
+      outputLog({nick: 'Server', message: 'Your are connected'});
+    };
 
-  	websocket.onmessage = (event) => {
-  		outputLog(JSON.parse(event.data));
-  	};
+    websocket.onmessage = (event) => {
+      outputLog(JSON.parse(event.data));
+    };
 
-  	websocket.onclose = () => {
-  		outputLog('Websocket is now closed.');
-  	};
+    websocket.onclose = () => {
+      outputLog('Websocket is now closed.');
+    };
   });
 
   send.addEventListener('click', () => {

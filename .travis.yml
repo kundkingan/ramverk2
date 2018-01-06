@@ -18,11 +18,10 @@ before_script:
     - npm install
 
 script:
-    - npm test
-
+    - npm run travis
+    
 after_success:
     - npm run report-coverage
-    - npm run test-scrutinizer
     - npm run docker-latest
     - npm run docker-8
     - npm run docker-7

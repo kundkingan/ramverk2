@@ -3,12 +3,67 @@
 # Me-page for Ramverk2
 
 [![Build Status](https://travis-ci.org/kundkingan/ramverk2.svg?branch=master)](https://travis-ci.org/kundkingan/ramverk2)
-[![Build Status](https://scrutinizer-ci.com/g/kundkingan/ramverk2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/kundkingan/ramverk2/build-status/master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9d8c11c2175d21c45353/maintainability)](https://codeclimate.com/github/kundkingan/ramverk2/maintainability)
 [![codecov](https://codecov.io/gh/kundkingan/ramverk2/branch/master/graph/badge.svg)](https://codecov.io/gh/kundkingan/ramverk2)
-[![Code Coverage](https://scrutinizer-ci.com/g/kundkingan/ramverk2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kundkingan/ramverk2/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kundkingan/ramverk2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kundkingan/ramverk2/?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b9a5a198a01f2c474cb3/maintainability)](https://codeclimate.com/github/kundkingan/ramverk2/maintainability)
+
+## Technologies used
+
+* Express
+* Pug
+* Websocket
+* Mongodb
+
+## Installation
+To install all of the dependencies then simply execute:
+
+```bash
+npm install
+```
+
+## Environment
+
+Change port with: DBWEBB_PORT
+Change DSN with: DBWEBB_DSN
+
+## Local development
+To run a local development then execute following and go to localhost:3000
+
+```bash
+npm start
+```
+
+To run a docker container then execute 
+
+```bash
+npm run docker
+```
 
 ## Mongodb
 
-Change DSN in mongodb/mongodb.js or DBWEBB_DSN as env when starting server on local machine.
+DSN for mongo is mongodb://192.168.99.100:27017/mumin
+
+## Testing
+
+```bash
+npm test
+```
+
+## Docker testing
+
+```bash
+# Build images
+npm run docker-build
+
+# Node v8
+npm run docker-8
+
+# Node v9
+npm run docker-9
+
+# Node latest
+npm run docker_latest
+```
+
+
+
+
