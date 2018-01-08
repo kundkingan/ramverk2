@@ -12,7 +12,7 @@ h6 Driftsättning live
 
 a(href='https://booking-system-dbwebb.herokuapp.com') Booking-system live
 
-p Jag har lagt upp mitt projekt på heroku så det körs live där hela tiden. Det var inte så svårt att verkligen få upp det så det funkade riktigt. Dem har rätt bra guide på hur man ska göra för diverse projekt. Speciellt med express och angular så är det även väldigt enkelt att gå från utveckling till produktion då man så enkelt som bara skriver 'ng build --prod' så får man fram en mapp med den kompilerade koden för frontenden.
+p Jag har lagt upp mitt projekt på heroku så det körs live där hela tiden. Det var inte så svårt att verkligen få upp det så det funkade riktigt. Dem har rätt bra guide på hur man ska göra för diverse projekt. Speciellt med express och angular så är det även väldigt enkelt att gå från utveckling till produktion då man så enkelt som bara skriver 'ng build --prod' så får man fram en mapp med den kompilerade koden för frontenden. För att få det att funka på heroku så la jag till ett kommando i package.json "postinstall" som bygger mitt projekt sen så använde jag deras github deploy som tar mitt projekt från github och kör igenom det med install, postinstall och sen start. Det är sjukt smidigt, men i början så var det lite fel då den ville att olika paket skulle vara i dev dependencies istället för dependencies. Men det var enkla fixar och sen funkade det fint.
 
 h6 God kodkvalite && Hög kodtäckning
 
@@ -20,7 +20,11 @@ p Jag har försökt få så bra kodkvalite som möjligt samt ha så god kodtäck
 
 h6 Angular
 
-p Jag har använt mig utav den senate version av Angular som använder Typescript för att utveckla min frontend och Express för backend. Valet att använda Angular är rätt simpelt då jag sedan tidigare har använt mig av det för olika projekt och för att jag tycker det är väldigt smidigt att använda för att göra allt från små till stora projekt. Då Angular använder Typescript som bas så tycker jag även det är mycket enklare att använda än ren Javascript. Då Typescript är mer strict jämfört med Javascript samt så liknar det Java rätt mycket. Själv är jag inget stort fan av Java men med just Typescript så tycker jag att det är en mellanting mellan Javascript och Java. Vilket gör att jag verkligen gillar kombination utav Angular och Typescript.   
+p Jag har använt mig utav den senate version av Angular som använder Typescript för att utveckla min frontend och Express för backend. Valet att använda Angular är rätt simpelt då jag sedan tidigare har använt mig av det för olika projekt och för att jag tycker det är väldigt smidigt att använda för att göra allt från små till stora projekt. Då Angular använder Typescript som bas så tycker jag även det är mycket enklare att använda än ren Javascript. Då Typescript är mer strict jämfört med Javascript samt så liknar det Java rätt mycket. Själv är jag inget stort fan av Java men med just Typescript så tycker jag att det är en mellanting mellan Javascript och Java. Vilket gör att jag verkligen gillar kombination utav Angular och Typescript.
+
+h6 Firebase
+
+p Användingen av Firebase är för att kunna logga in användare med email och password samt spara deras bokningar i deras databas. Valet av Firebase är enkelt då jag tycker det är sjukt smidigt att använda då dem erbjuder många features så att man slipper att meka med det själv. Ett exemple är inloggningssystem då Firebase erbjuder inloggning med email/password eller via olika sociala medie appar som facebook etc. Det som gör det lite jobbigt med firebase var dock att jag ville köra all logik via min server och då så försvinner den sessionen man får då man loggar in så att man har tillgång till databas osv. Så jag fick gör min egna "session" så jag skickar uid och id till användaren som sparar det i sessionen och skickar med det till servern varje gång man frågar efter något. Det var lite mekigt att få det och funka då jag fick ändra min modul för att få den att retunera uid också. Men det gick till slut.
 
 h5 Från kursmoment till projekt
 
